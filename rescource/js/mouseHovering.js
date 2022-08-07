@@ -4,13 +4,13 @@ const mouseHovering = () => {
 
 
     function HoveringFunction(e) {
-        if (e.target.tagName === "BUTTON" || e.target.tagName === "A" || e.target.tagName === "I") {
-            if (e.target.classList.contains('my-icon')) {
-                hoveringElement.setAttribute("style", "border-width: 7px; width:0px;height:0px; border-color:#6cc644;");
 
-            } else {
-                hoveringElement.setAttribute("style", "border-width: 5px; width:25px;height:25px;border-color:#F35D69;");
-            }
+        if (e.target.tagName === "BUTTON" || e.target.tagName === "A" || e.target.tagName === "IMG") {
+
+            hoveringElement.setAttribute("style", "border-width: 5px; width:25px;height:25px;border-color:#F35D69;");
+
+            e.target.getBoundingClientRect().width = e.target.getBoundingClientRect().width + '20px'
+
         } else {
             hoveringElement.setAttribute("style", "border-width: 7px; width:0px;height:0px; border-color:#6cc644;");
         }
