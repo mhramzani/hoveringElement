@@ -1,8 +1,7 @@
 import get from './selectElement.js';
 const mouseHovering = () => {
     const hoveringElement = get('.hovering');
-    const nav = get('nav');
-    const main = get('main');
+
 
     function HoveringFunction(e) {
         if (e.target.tagName === "BUTTON" || e.target.tagName === "A" || e.target.tagName === "I") {
@@ -28,9 +27,7 @@ const mouseHovering = () => {
     function HoverOut() {
         hoveringElement.style.opacity = 0;
     }
-    main.addEventListener('mousemove', HoveringFunction);
-    nav.addEventListener('mousemove', HoveringFunction);
-    main.addEventListener('mouseout', HoverOut);
-    nav.addEventListener('mouseout', HoverOut);
+    window.addEventListener('mousemove', HoveringFunction);
+    window.addEventListener('mouseout', HoverOut);
 }
 export default mouseHovering;
